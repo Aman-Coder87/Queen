@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@600&display=swap');
+
+* {
+    font-family: 'Sansita Swashed', cursive;
+}
+
+body {
+  background: #131418;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "image-1 image-2 image-3 image-4";
+  grid-gap: 10px;
+}
+
+.grid-container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: red;
+}
+
+.grid-container > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-1 {
+  grid-area: image-1;
+  transition: all 0.2s ease-in-out;
+}
+
+.image-1:hover {
+  transform: scale(1.1);
+}
+.image-2 {
+  grid-area: image-2;
+  transition: 1s ease-in-out;
+}
+
+.image-2:hover {
+  transform: rotate(25deg);
+  background-image: url("img3.jpg");
+}
+
+.image-2:hover .second-image {
+  display: inline;
+}
+.second-image {
+  display: none;
+  position: absolute;
+  top: 0;
+}
+
+.image-3 {
+  grid-area: image-3;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-animation: swinging 4.5s ease-in-out forwards infinite;
+  animation: swinging 4.5s ease-in-out forwards infinite;
+}
+
+.image-3:hover {
+  animation-play-state: paused;
+}
+
+.image-4 {
+  grid-area: image-4;
+  opacity: 0.2;
+}
+
+.image-4:hover {
+  opacity: 1;
+}
+
+@keyframes swinging {
+  0% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+#hero {
+    margin: 1.5rem auto;
+}
+
+#hero p {
+    color: #f1f1f1;
+    text-align: center;
+    word-spacing: 0.3rem;
+    letter-spacing: 0.1rem;
+}
